@@ -4,10 +4,13 @@ import 'package:image_fetch/Src/ModelClasses/ImageData.dart';
 
 
 class ImageList extends StatelessWidget{
+
+
+
   List<ImageData> myImgList=[];
   ImageList(this.myImgList);
 
-
+//this is my image view to show images
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -19,6 +22,7 @@ class ImageList extends StatelessWidget{
           // to refer to that specific item in the list
 
            return buildImageFromData(myImgList[index]);
+
          });
 
   }
@@ -35,7 +39,10 @@ class ImageList extends StatelessWidget{
       child: Column(
         children : <Widget>[
           Padding(
-            child: Image.network(listViewArgument.id),
+            child: Image.network(
+
+              listViewArgument.url,
+                ),
             padding: EdgeInsets.only(
               bottom: 8.0,
             ),
@@ -43,7 +50,7 @@ class ImageList extends StatelessWidget{
 
 
           Padding(
-            child: Text(listViewArgument.likes),
+            child: Text("Likes Are "+listViewArgument.likes.toString()),
             padding: EdgeInsets.only(
               left: 8.0,
               bottom: 8.0,

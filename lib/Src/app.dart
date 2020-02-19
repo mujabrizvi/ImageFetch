@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:io';
 import 'dart:convert';
 import 'package:http/http.dart' show get;
 import '../Src/ModelClasses/ImageData.dart';
@@ -14,6 +13,9 @@ class MyApp extends StatefulWidget {
 
 class MyAppState extends State<MyApp>{
 
+  //List<ImageData> imagesList=[];
+
+  //testing purpose
   List<ImageData> imagesList=[];
 
   void fetchimage() async
@@ -35,24 +37,20 @@ class MyAppState extends State<MyApp>{
 
 
     var response = await get(url);
-      print(response.body);
+      //print(response.body);
      var parsedRes=json.decode(response.body);
+     //print("Resposse is ->");
+    // print(parsedRes);
+    // var data=parsedRes['results'][0]['urls']['raw'];
+//    var data=parsedRes['results'][0]['likes'];
+//     print(data);
 
      var ImageData_obj= ImageData.fromjson(parsedRes);
 
+
      setState(() {
-       imagesList.add(ImageData_obj);
+         imagesList.add(ImageData_obj);
      });
-
-
-
-      var ob1=ImageData_obj.likes;
-      var ob2=ImageData_obj.id;
-    var ob3=ImageData_obj.raw;
-
-      print("Likes are " +"$ob1");
-      print("Id is " +"$ob2");
-    print("URL " +"$ob3");
 
   }
 
