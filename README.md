@@ -1,6 +1,6 @@
 # image_fetch
 
-A new Flutter application.
+A new Flutter application that fetches random images everytime using unsplash api.
 
 ## Getting Started
 
