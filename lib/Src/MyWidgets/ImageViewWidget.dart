@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_fetch/Src/ModelClasses/ImageData.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 
 class ImageList extends StatelessWidget{
@@ -50,7 +51,7 @@ class ImageList extends StatelessWidget{
 
 
           Padding(
-            child: Text("Likes Are "+listViewArgument.likes.toString()),
+            child: Text("Likes :"+listViewArgument.likes.toString()),
             padding: EdgeInsets.only(
               left: 8.0,
               bottom: 8.0,
